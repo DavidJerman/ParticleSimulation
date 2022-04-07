@@ -17,8 +17,8 @@ class Box:
 
     def update(self):
         for particle in self.particles:
-            for inner_particle in self.particles:
-                particle.collide(inner_particle)
+            for temp_particle in self.particles:
+                particle.collide(temp_particle)
             particle.update(self.TIME_SCALE)
 
     def draw(self, win):

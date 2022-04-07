@@ -15,10 +15,15 @@ if __name__ == "__main__":
     run = True
     clock = pygame.time.Clock()
 
+    SPEED_MULTI = 1
+
     box = Box(WIDTH / Particle.SCALE, HEIGHT / Particle.SCALE, 0)
-    for i in range(200):
-        box.add_particle(Particle(random.randint(3, WIDTH / Particle.SCALE - 3), random.randint(3, HEIGHT / Particle.SCALE - 3), random.randint(1, 2), random.randint(5, 30), colors[random.randint(1, 5)],
-                                  WIDTH / Particle.SCALE, HEIGHT / Particle.SCALE, random.randint(0, 2) / 10, random.randint(0, 2) / 10))
+    for i in range(20):
+        box.add_particle(
+            Particle(random.randint(3, WIDTH / Particle.SCALE - 3), random.randint(3, HEIGHT / Particle.SCALE - 3),
+                     random.randint(2, 2), random.randint(5, 30), colors[random.randint(1, 5)],
+                     WIDTH / Particle.SCALE, HEIGHT / Particle.SCALE, random.randint(0, 2) / 10 * SPEED_MULTI,
+                     random.randint(0, 2) / 10 * SPEED_MULTI))
 
     while run:
         clock.tick(60 * Box.TIME_SCALE)

@@ -24,7 +24,7 @@ class Particle:
         distance_x = self.x - other.x
         distance_y = self.y - other.y
         distance = math.sqrt(distance_x ** 2 + distance_y ** 2)
-        return distance < self.radius + other.radius
+        return distance <= (self.radius + other.radius)
 
     def hit_wall(self):
         return not (
